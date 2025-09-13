@@ -1,0 +1,6 @@
+@use '../styles/colour';
+
+.h1 {
+  color: colour.$primary;
+}
+
