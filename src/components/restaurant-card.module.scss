@@ -1,0 +1,54 @@
+@use '../styles/colour';
+@use '../styles/spacing';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: spacing.$xxs;
+  padding: spacing.$m spacing.$m 0 spacing.$m;
+  
+  &:last-child {
+    padding-bottom: spacing.$m;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+.cover {
+  position: relative;
+  height: 42vw;
+  background-size: cover;
+  background-position: center;
+  border-radius: spacing.$xxs;
+  border: 1px solid colour.$borders;
+}
+
+.deal {
+  position: absolute;
+  left: spacing.$xs;
+  top: spacing.$xs;
+  padding: spacing.$xxs spacing.$xs;
+  color: colour.$background;
+  background-color: colour.$primary;
+  border-radius: spacing.$xxs;
+  box-shadow: 2px 2px 3px rgba(0,0,0,0.5);
+}
+
+.heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: spacing.$xs;
+
+  h2 {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 800;
+  }
+}
+
+.cuisines {
+  font-size: 0.75rem;
+}

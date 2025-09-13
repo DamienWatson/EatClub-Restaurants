@@ -1,0 +1,17 @@
+@use '../styles/colour';
+@use '../styles/spacing';
+@use '../styles/global';
+
+.container {
+  padding: spacing.$xxs spacing.$xxs spacing.$xxs spacing.$m;
+  border-top: 1px solid colour.$borders;
+  border-bottom: 1px solid colour.$borders;
+
+  input {
+    position: relative;
+    padding: spacing.$xs spacing.$xs spacing.$xs spacing.$l;
+    width: calc(100% - 62px);
+    font-size: 1.125rem;
+    border: 0;
+  }
+}

@@ -1,0 +1,9 @@
+@use '../styles/colour';
+@use '../styles/spacing';
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: spacing.$s spacing.$m spacing.$xxs;
+}

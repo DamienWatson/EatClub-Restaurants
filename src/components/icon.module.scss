@@ -1,0 +1,11 @@
+@use '../styles/colour';
+@use '../styles/spacing';
+
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: spacing.$m;
+  height: spacing.$m;
+  border: 1px solid colour.$borders;
+}

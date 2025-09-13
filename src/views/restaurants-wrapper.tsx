@@ -28,19 +28,7 @@ const RestaurantsWrapper = () => {
     fetchData();
   }, []);
 
-  return (
-    <div>
-      <h1 className={classes.h1}>RestaurantsWrapper</h1>
-
-      <Restaurants />
-
-      {restaurants.map((restaurant: RestaurantType) => (
-        <p key={restaurant.objectId}>
-          {restaurant.name}
-        </p>
-      ))}
-    </div>
-  );
+  return <Restaurants restaurants={restaurants} />;
 };
 
 export default RestaurantsWrapper;
