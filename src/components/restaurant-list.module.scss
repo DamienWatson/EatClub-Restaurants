@@ -1,0 +1,5 @@
+@use '../styles/spacing';
+
+.message {
+  padding: 0 spacing.$m;
+}

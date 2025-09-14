@@ -1,16 +1,20 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import axios from 'axios';
 import Restaurants from './restaurants';
+import { useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
+import { RootState } from '../store';
+import { setIsLoading, setRestaurants } from '../slices/ecrSlice';
 import classes from './restaurants.module.scss';
-import { RestaurantType } from '../types/restaurants';
 
 const RestaurantsWrapper = () => {
-  const [restaurants, setRestaurants] = useState([]);
+  const dispatch = useDispatch();
+  const isLoading = useSelector((state:RootState) => state.isLoading);
 
   const fetchData = () => {
     axios.get('/misc/challengedata.json')
       .then(({ data }) => {
-        setRestaurants(data.restaurants);
+        dispatch(setRestaurants(data));
       })
       .catch(error => {
         if (error.response) {
@@ -21,14 +25,21 @@ const RestaurantsWrapper = () => {
           // Network error or a CORS issue
           console.log('Error:', error.message);
         }
-      });
+      })
+      .finally(() => {
+        dispatch(setIsLoading(false));
+      })
     };
 
   useEffect(() => {
     fetchData();
   }, []);
 
-  return <Restaurants restaurants={restaurants} />;
+  if (isLoading) {
+    return <p className={classes.message}>Loading...</p>;
+  }
+
+  return <Restaurants />;  
 };
 
 export default RestaurantsWrapper;

@@ -32,7 +32,7 @@ const InputFilter = ({ onChange }: any) => {
         type="text"
         id="filter"
         name="filter"
-        placeholder="restaurant name or cuisine"
+        placeholder="enter restaurant name or cuisine"
         onKeyUp={handleDebounce}
         onChange={handleKeyPress}
         value={inputValue}
