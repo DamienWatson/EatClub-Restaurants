@@ -1,0 +1,9 @@
+@use '../styles/colour';
+@use '../styles/spacing';
+
+.carousel {
+  position: relative;
+  height: 60vw;
+  background-size: cover;
+  background-position: center;
+}

@@ -1,0 +1,13 @@
+@use '../styles/global';
+@use '../styles/spacing';
+
+.button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: spacing.$xxs;
+  font-size: 0.75rem;
+  background-color: transparent;
+  border: 0;
+}

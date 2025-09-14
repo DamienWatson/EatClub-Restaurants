@@ -1,0 +1,37 @@
+@use '../styles/colour';
+@use '../styles/spacing';
+
+.container {
+  padding: 0 spacing.$s;
+}
+
+.heading {
+  margin: 0;
+  color: colour.$heading;
+  font-size: 26px;
+  text-align: center;
+  font-weight: 800;
+}
+
+.tagline {
+  margin: 0;
+  text-align: center;
+}
+
+.infoList {
+  display: grid;
+  grid-template-columns: 32px 1fr;
+  gap: spacing.$xs;
+  margin-top: spacing.$s;
+  padding-top: spacing.$xs;
+  border-top: 1px solid colour.$borders;
+  color: colour.$body;
+  
+  p {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0;
+    font-weight: 600;
+  }
+}

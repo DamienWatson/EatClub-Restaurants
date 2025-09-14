@@ -1,7 +1,10 @@
 import React from 'react';
 import { RestaurantType } from '../types/restaurants';
-import classes from './restaurant-card.module.scss';
 import Icon from './icon';
+import { kebabCase } from '../scripts/helpers';
+import { Link } from 'react-router-dom';
+import HeartIcon from './icons/heart-icon';
+import classes from './restaurant-card.module.scss';
 
 type RestaurantCardProps = {
   restaurant: RestaurantType,
@@ -12,7 +15,7 @@ const RestaurantCard = ({ restaurant }:RestaurantCardProps) => {
 
   return (
     <div className={classes.container}>
-      <div
+      <Link to={`/${kebabCase(restaurant.name)}`}
         className={classes.cover}
         style={{ backgroundImage: `url(${restaurant.imageLink})` }}
       >
@@ -20,11 +23,15 @@ const RestaurantCard = ({ restaurant }:RestaurantCardProps) => {
           <strong>Deal% off</strong>
           <p>Byline message</p>
         </div>
-      </div>
+      </Link>
 
       <div className={classes.heading}>
-        <h2>{restaurant.name}</h2>
-        <Icon>H</Icon>
+        <Link to={`/${kebabCase(restaurant.name)}`}>
+          <h2>{restaurant.name}</h2>
+        </Link>
+        <Icon>
+          <HeartIcon />
+        </Icon>
       </div>
 
       <p>0.5km Away, {restaurant.suburb}</p>

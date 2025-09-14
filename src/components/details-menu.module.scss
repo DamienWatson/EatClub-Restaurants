@@ -1,9 +1,10 @@
 @use '../styles/colour';
 @use '../styles/spacing';
 
-.header {
+.container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: spacing.$s spacing.$m spacing.$xs;
+  padding: 0 spacing.$m spacing.$xs;
+  border-bottom: 1px solid colour.$borders;
 }

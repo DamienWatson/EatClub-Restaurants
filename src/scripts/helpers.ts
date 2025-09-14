@@ -5,3 +5,7 @@ export const charsInStr = (str: string, chars: string) => {
 export const charsInArr = (arr: Array<string>, chars: string) => {
   return arr.filter((item) => charsInStr(item, chars)).length > 0;
 };
+
+export const kebabCase = (str: string) => {
+  return str.toLowerCase().replace(/\s/g, '-');
+};
