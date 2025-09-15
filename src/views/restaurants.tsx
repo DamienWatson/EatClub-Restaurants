@@ -2,13 +2,13 @@ import React, { useEffect, useState } from 'react';
 import Layout from '../components/layout';
 import InputFilter from '../components/input-filter';
 import { DealType, RestaurantsType } from '../types/restaurants';
-import classes from './restaurants.module.scss';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { RootState } from '../store';
 import { setFilterText } from '../slices/ecrSlice';
 import { charsInArr, charsInStr } from '../scripts/helpers';
 import RestaurantList from '../components/restaurant-list';
+import classes from './restaurants.module.scss';
 
 const Restaurants = () => {
   const dispatch = useDispatch();
@@ -53,15 +53,17 @@ const Restaurants = () => {
     <Layout>
       <InputFilter onChange={handleInputUpdate} />
 
-      <h1 className={classes.srOnly}>EatClub Restaurants</h1>
+      <div className={classes.screenContent}>
+        <h1 className={classes.srOnly}>EatClub Restaurants</h1>
 
-      {(!isLoading && restaurants.length === 0) && (
-        <p>No Restaurants found</p>
-      )}
+        {(!isLoading && restaurants.length === 0) && (
+          <p>No Restaurants found</p>
+        )}
 
-      {(!isLoading && restaurants.length > 0) && (
-        <RestaurantList restaurants={filteredRestaurants} />
-      )}
+        {(!isLoading && restaurants.length > 0) && (
+          <RestaurantList restaurants={filteredRestaurants} />
+        )}
+      </div>
     </Layout>
   );
 };

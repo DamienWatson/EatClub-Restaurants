@@ -1,5 +1,6 @@
 @use '../styles/colour';
 @use '../styles/spacing';
+@use '../styles/variables';
 
 .container {
   display: flex;
@@ -61,4 +62,20 @@
 
 .cuisines {
   font-size: 0.75rem;
+}
+
+@media screen and (min-width: variables.$medium) {
+  .container {
+    padding: 0 0 0;
+  }
+  
+  .cover {
+    height: calc(variables.$medium * 0.1875);
+  }
+}
+
+@media screen and (min-width: variables.$large) {
+  .cover {
+    height: calc(variables.$large * 0.1875);
+  }
 }

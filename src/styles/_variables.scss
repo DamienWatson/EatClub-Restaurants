@@ -1,0 +1,16 @@
+$medium: 768px;
+$large:  1024px;
+
+@media screen and (min-width: $medium) {
+  .screenContent {
+    position: relative;
+    max-width: $medium;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: $large) {
+  .screenContent {
+    max-width: $large;
+  }
+}

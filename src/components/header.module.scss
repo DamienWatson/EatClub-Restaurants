@@ -1,13 +1,16 @@
 @use '../styles/colour';
 @use '../styles/spacing';
+@use '../styles/variables';
 
 .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: spacing.$ms spacing.$m spacing.$xxs;
+  .screenContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: spacing.$ms spacing.$m spacing.$xxs;
 
-  a, svg {
-    display: block;
+    a, svg {
+      display: block;
+    }
   }
 }

@@ -1,6 +1,7 @@
 @use '../styles/colour';
 @use '../styles/spacing';
 @use '../styles/global';
+@use '../styles/variables';
 
 .container {
   position: relative;
@@ -8,24 +9,34 @@
   border-top: 1px solid colour.$borders;
   border-bottom: 1px solid colour.$borders;
 
-  .icon {
-    position: absolute;
-    left: spacing.$m;
-    top: 50%;
-    color: colour.$heading;
-    transform: translateY(-45%);
-    z-index: 1;
-  }
-
   input {
     position: relative;
     padding: spacing.$ms spacing.$m spacing.$ms 48px;
     width: calc(100% - 72px);
-    font-size: 1.125rem;
+    font-size: 1rem;
     border: 0;
     
     &::placeholder {
       color: colour.$notes;
     }
+  }
+}
+
+.icon {
+  position: absolute;
+  left: spacing.$m;
+  top: 50%;
+  color: colour.$heading;
+  transform: translateY(-40%);
+  z-index: 1;
+}
+
+@media screen and (min-width: variables.$medium) {
+  .screenContent {
+    padding: 0 spacing.$m;
+  }
+
+  .container input {
+    padding-left: spacing.$m;
   }
 }

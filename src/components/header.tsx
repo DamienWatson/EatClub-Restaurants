@@ -11,15 +11,17 @@ const Header = () => {
 
   return (
     <header className={classes.header}>
-      <UserIcon size="28" />
-      
-      <Link to="/">
-        {params.id === undefined
-          ? <EatClubIcon size="28" colour="#ce4837" />
-          : <BackIcon size="28" colour="#ce4837" />}
-      </Link>
-      
-      <OptionsIcon size="28" />
+      <div className={classes.screenContent}>
+        <UserIcon size="28" />
+        
+        <Link to="/">
+          {params.id === undefined
+            ? <EatClubIcon size="28" colour="#ce4837" />
+            : <BackIcon size="28" colour="#ce4837" />}
+        </Link>
+        
+        <OptionsIcon size="28" />
+      </div>
     </header>
   );
 };

@@ -22,26 +22,28 @@ const InputFilter = ({ onChange }: any) => {
 
   return (
     <div className={classes.container}>
-      <label
-        htmlFor='filter'
-        className={classes.srOnly}
-      >
-        Restaurant filter
-      </label>
+      <div className={classes.screenContent}>
+        <label
+          htmlFor='filter'
+          className={classes.srOnly}
+        >
+          Restaurant filter
+        </label>
 
-      <div className={classes.icon}>
-        <MagnifyIcon size="16" />
+        <div className={classes.icon}>
+          <MagnifyIcon size="16" />
+        </div>
+
+        <input
+          type="text"
+          id="filter"
+          name="filter"
+          placeholder="enter restaurant name or cuisine"
+          onKeyUp={handleDebounce}
+          onChange={handleKeyPress}
+          value={inputValue}
+        />
       </div>
-
-      <input
-        type="text"
-        id="filter"
-        name="filter"
-        placeholder="enter restaurant name or cuisine"
-        onKeyUp={handleDebounce}
-        onChange={handleKeyPress}
-        value={inputValue}
-      />
     </div>
   );
 };

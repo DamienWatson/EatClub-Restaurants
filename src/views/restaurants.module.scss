@@ -1,6 +1,11 @@
 @use '../styles/colour';
 @use '../styles/global';
 @use '../styles/spacing';
+@use '../styles/variables';
+
+.screenContent {
+  width: 100%;
+}
 
 .h1 {
   color: colour.$primary;
@@ -8,4 +13,12 @@
 
 .message {
   padding: 0 spacing.$m;
+}
+
+@media screen and (min-width: variables.$medium) {
+  .screenContent {
+    width: 100%;
+    padding: 0 spacing.$m;
+    width: calc(100% - 48px);
+  }
 }

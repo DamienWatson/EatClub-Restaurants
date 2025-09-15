@@ -1,5 +1,16 @@
 @use '../styles/spacing';
+@use '../styles/variables';
 
 .message {
   padding: 0 spacing.$m;
+}
+
+@media screen and (min-width: variables.$medium) {
+  .restaurantList {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: spacing.$m;
+    row-gap: spacing.$l;
+    margin: spacing.$m 0;
+  }
 }

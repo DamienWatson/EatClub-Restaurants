@@ -24,14 +24,14 @@ const RestaurantList = ({ restaurants }: RestaurantListProps) => {
   }
 
   return (
-    <>
+    <div className={classes.restaurantList}>
       {restaurants.map((restaurant: RestaurantType) => (
         <RestaurantCard
           key={restaurant.objectId}
           restaurant={restaurant}
         />
       ))}
-    </>
+    </div>
   );
 };
 
