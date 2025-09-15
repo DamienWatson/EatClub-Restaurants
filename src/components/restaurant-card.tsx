@@ -5,13 +5,20 @@ import { kebabCase } from '../scripts/helpers';
 import { Link } from 'react-router-dom';
 import HeartIcon from './icons/heart-icon';
 import classes from './restaurant-card.module.scss';
+import { availableMessage, getTags } from '../scripts/deals';
 
 type RestaurantCardProps = {
   restaurant: RestaurantType,
 };
 
 const RestaurantCard = ({ restaurant }:RestaurantCardProps) => {
-  const getTags = ["Dine In", "Takeaway"];
+  const { close, discount, end, open, start } = restaurant.deals[0];
+
+  const getTagLine = getTags(restaurant.deals);
+
+  const hours = { open: restaurant.open, close: restaurant.close };
+  const openTime = open || start;
+  const closeTime = close || end;
 
   return (
     <div className={classes.container}>
@@ -21,7 +28,7 @@ const RestaurantCard = ({ restaurant }:RestaurantCardProps) => {
       >
         <div className={classes.deal}>
           <strong>{restaurant.deals[0].discount}% off</strong>
-          <p>Byline message</p>
+          <p>{availableMessage(hours, openTime, closeTime)}</p>
         </div>
       </Link>
 
@@ -36,7 +43,7 @@ const RestaurantCard = ({ restaurant }:RestaurantCardProps) => {
 
       <p>0.5km Away, {restaurant.suburb}</p>
       <p className={classes.cuisines}>{restaurant.cuisines.join(', ')}</p>
-      <p>{getTags.join(' • ')}</p>
+      <p>{getTagLine.join(' • ')}</p>
     </div>
   );
 };

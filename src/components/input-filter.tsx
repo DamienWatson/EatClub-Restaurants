@@ -2,7 +2,10 @@ import React, { useRef, useState } from 'react';
 import classes from './input-filter.module.scss';
 import MagnifyIcon from './icons/magnify-icon';
 
-const InputFilter = ({ onChange }: any) => {
+type InputFilterProps = {
+  onChange: (value: string) => void,
+}
+const InputFilter = ({ onChange }: InputFilterProps) => {
   const [inputValue, setInputValue] = useState('');
 
   let debounceRef = useRef<ReturnType<typeof setTimeout>>(setTimeout(() => {}, 0))
