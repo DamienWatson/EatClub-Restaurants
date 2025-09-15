@@ -20,7 +20,7 @@ const RestaurantCard = ({ restaurant }:RestaurantCardProps) => {
         style={{ backgroundImage: `url(${restaurant.imageLink})` }}
       >
         <div className={classes.deal}>
-          <strong>Deal% off</strong>
+          <strong>{restaurant.deals[0].discount}% off</strong>
           <p>Byline message</p>
         </div>
       </Link>

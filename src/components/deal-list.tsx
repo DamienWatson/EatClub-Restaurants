@@ -8,20 +8,16 @@ type DealListProps = {
   hours: Hours,
 }
 
-const DealList = ({ deals, hours }: DealListProps) => {
-  const sortedDeals = [...deals].sort((a, b) => Number(b.discount) - Number(a.discount));
-
-  return (
-    <ul className={classes.container}>
-      {sortedDeals.map((deal) => (
-        <DealContent
-          key={deal.objectId}
-          deal={deal}
-          hours={hours}
-        />
-      ))}
-    </ul>
-  );
-};
+const DealList = ({ deals, hours }: DealListProps) => (
+  <ul className={classes.container}>
+    {deals.map((deal) => (
+      <DealContent
+        key={deal.objectId}
+        deal={deal}
+        hours={hours}
+      />
+    ))}
+  </ul>
+);
 
 export default DealList;
