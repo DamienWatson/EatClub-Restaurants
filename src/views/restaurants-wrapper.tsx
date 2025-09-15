@@ -13,7 +13,7 @@ const RestaurantsWrapper = () => {
   const isLoading = useSelector((state:RootState) => state.isLoading);
 
   const fetchData = () => {
-    axios.get('/misc/challengedata.json')
+    axios.get('https://eccdn.com.au/misc/challengedata.json')
       .then(({ data }) => {
         // Sort Deals by Discount and Restaurant by First (Best) Deal
         const restaurants = [...data.restaurants]
