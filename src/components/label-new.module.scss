@@ -1,0 +1,13 @@
+@use '../styles/colour';
+@use '../styles/spacing';
+
+.newLabel {
+  position: absolute;
+  right: spacing.$xs;
+  top: spacing.$xs;
+  padding: spacing.$xxs spacing.$xs;
+  font-size: 0.875rem;
+  color: colour.$background;
+  background-color: colour.$secondary;
+  border-radius: spacing.$xxs;
+}

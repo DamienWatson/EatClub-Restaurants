@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react';
 import classes from './input-filter.module.scss';
+import MagnifyIcon from './icons/magnify-icon';
 
 const InputFilter = ({ onChange }: any) => {
   const [inputValue, setInputValue] = useState('');
@@ -27,6 +28,10 @@ const InputFilter = ({ onChange }: any) => {
       >
         Restaurant filter
       </label>
+
+      <div className={classes.icon}>
+        <MagnifyIcon size="16" />
+      </div>
 
       <input
         type="text"

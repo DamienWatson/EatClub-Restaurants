@@ -3,15 +3,29 @@
 @use '../styles/global';
 
 .container {
-  padding: spacing.$xxs spacing.$xxs spacing.$xxs spacing.$m;
+  position: relative;
+  padding: 0;
   border-top: 1px solid colour.$borders;
   border-bottom: 1px solid colour.$borders;
 
+  .icon {
+    position: absolute;
+    left: spacing.$m;
+    top: 50%;
+    color: colour.$heading;
+    transform: translateY(-45%);
+    z-index: 1;
+  }
+
   input {
     position: relative;
-    padding: spacing.$xs spacing.$xs spacing.$xs spacing.$l;
-    width: calc(100% - 62px);
+    padding: spacing.$ms spacing.$m spacing.$ms 48px;
+    width: calc(100% - 72px);
     font-size: 1.125rem;
     border: 0;
+    
+    &::placeholder {
+      color: colour.$notes;
+    }
   }
 }

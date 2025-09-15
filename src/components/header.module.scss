@@ -5,5 +5,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: spacing.$s spacing.$m spacing.$xs;
+  padding: spacing.$ms spacing.$m spacing.$xxs;
+
+  a, svg {
+    display: block;
+  }
 }

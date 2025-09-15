@@ -7,6 +7,7 @@ import DetailsMenu from '../components/details-menu';
 import DetailsContent from '../components/details-content';
 import { kebabCase } from '../scripts/helpers';
 import classes from './restaurant-details.module.scss';
+import LabelNew from '../components/label-new';
 
 const RestaurantDetails = () => {
   const params = useParams();
@@ -14,6 +15,9 @@ const RestaurantDetails = () => {
   const id = params.id;
 
   const currentRestaurant = restaurants.find((restaurant) => kebabCase(restaurant.name) === id);
+
+  // Couldn't find anything to link this to, so it appears 50% of the time.
+  const randomNewLabel = Math.random() >= 0.5;
 
   if (!currentRestaurant) {
     return (
@@ -28,7 +32,9 @@ const RestaurantDetails = () => {
       <div
         className={classes.carousel}
         style={{ backgroundImage: `url(${currentRestaurant.imageLink})` }}
-      ></div>
+      >
+        {randomNewLabel && <LabelNew />}
+      </div>
 
       <DetailsMenu />
 
