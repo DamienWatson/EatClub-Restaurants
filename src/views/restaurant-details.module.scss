@@ -7,3 +7,9 @@
   background-size: cover;
   background-position: center;
 }
+
+.message {
+  margin: 0;
+  padding: spacing.$m;
+  border-top: 1px solid colour.$borders;
+}

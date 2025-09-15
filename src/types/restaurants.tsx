@@ -23,3 +23,8 @@ export type DealType = {
   end?: string,
   qtyLeft: string,
 }
+
+export type Hours = {
+  open: string,
+  close: string,
+}

@@ -1,0 +1,12 @@
+@use '../styles/colour';
+@use '../styles/spacing';
+
+.button {
+  padding: spacing.$ms spacing.$s;
+  line-height: 1;
+  color: colour.$secondary;
+  font-weight: 800;
+  border: 2px solid colour.$secondary;
+  border-radius: 100px;
+  background-color: colour.$background;
+}

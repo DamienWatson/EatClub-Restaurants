@@ -3,6 +3,7 @@ import { RestaurantType } from '../types/restaurants';
 import classes from './details-content.module.scss';
 import ClockIcon from './icons/clock-icon';
 import LocationIcon from './icons/location-icon';
+import DealList from './deal-list';
 
 type DetailsContentProps = {
   restaurant: RestaurantType,
@@ -10,6 +11,7 @@ type DetailsContentProps = {
 
 const DetailsContent = ({ restaurant }: DetailsContentProps) => {
   const { address1, close, deals, name, open, suburb } = restaurant;
+  const hours = { open, close };
 
   const tagList = deals.reduce((tags: Array<string>, deal) => {
     const newTag: string = deal.dineIn === 'true' ? 'Dine In' : 'Takeaway';
@@ -35,6 +37,8 @@ const DetailsContent = ({ restaurant }: DetailsContentProps) => {
         <LocationIcon size="32" />
         <p>{address1}, {suburb}</p>
       </div>
+
+      <DealList deals={deals} hours={hours} />
     </div>
   );
 };

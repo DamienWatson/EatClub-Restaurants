@@ -1,0 +1,36 @@
+@use '../styles/colour';
+@use '../styles/spacing';
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: spacing.$xs 0;
+  border-top: 1px solid colour.$borders;
+  
+  &:last-child {
+    margin-bottom: spacing.$s;
+    border-bottom: 1px solid colour.$borders;
+  }
+}
+
+.heading {
+  display: flex;
+  align-items: center;
+  gap: spacing.$xxs;
+  margin: 0;
+  color: colour.$secondary;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.available {
+  margin: 0;
+  font-size: 0.875rem;
+}
+
+.dealsLeft {
+  margin: 0;
+  font-size: 0.75rem;
+  color: colour.$notes;
+}
