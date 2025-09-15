@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Layout from '../components/layout';
 import InputFilter from '../components/input-filter';
-import { DealType, RestaurantsType } from '../types/restaurants';
+import { RestaurantsType } from '../types/restaurants';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { RootState } from '../store';
@@ -21,16 +21,6 @@ const Restaurants = () => {
     dispatch(setFilterText(value));
   };
 
-  const getMaxDiscount = (deals: Array<DealType>) => {
-    return deals.reduce((max, deal) => {
-      if (Number(deal.discount) > max) {
-        return Number(deal.discount);
-      }
-
-      return max;
-    }, 0);
-  }
-
   useEffect(() => {
     let filtered: RestaurantsType = [...restaurants];
 
@@ -40,9 +30,6 @@ const Restaurants = () => {
         (charsInStr(restaurant.name, filterText) || charsInArr(restaurant.cuisines, filterText))
       ));
     }
-
-    // // Sort
-    // filtered.sort((a, b) => getMaxDiscount(b.deals) - getMaxDiscount(a.deals));
 
     setFilteredRestaurants(filtered);
 

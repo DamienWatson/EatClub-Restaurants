@@ -27,7 +27,7 @@ const RestaurantCard = ({ restaurant }:RestaurantCardProps) => {
         style={{ backgroundImage: `url(${restaurant.imageLink})` }}
       >
         <div className={classes.deal}>
-          <strong>{restaurant.deals[0].discount}% off</strong>
+          <strong>{discount}% off</strong>
           <p>{availableMessage(hours, openTime, closeTime)}</p>
         </div>
       </Link>

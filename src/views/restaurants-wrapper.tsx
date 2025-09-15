@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { RootState } from '../store';
 import { setIsLoading, setRestaurants } from '../slices/ecrSlice';
-import { DealType, RestaurantType } from '../types/restaurants';
+import { RestaurantType } from '../types/restaurants';
 import Restaurants from './restaurants';
 import classes from './restaurants.module.scss';
 
@@ -40,6 +40,8 @@ const RestaurantsWrapper = () => {
 
   useEffect(() => {
     fetchData();
+  
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   if (isLoading) {
