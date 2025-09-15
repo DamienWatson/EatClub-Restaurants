@@ -1,5 +1,6 @@
 @use '../styles/colour';
 @use '../styles/spacing';
+@use '../styles/variables';
 
 .container {
   padding: 0 spacing.$s;

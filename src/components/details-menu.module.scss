@@ -1,10 +1,12 @@
 @use '../styles/colour';
 @use '../styles/spacing';
+@use '../styles/variables';
 
-.container {
+.screenContent {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 spacing.$m spacing.$xs;
   border-bottom: 1px solid colour.$borders;
 }
+
