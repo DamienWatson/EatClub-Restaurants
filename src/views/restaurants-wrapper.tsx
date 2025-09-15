@@ -12,26 +12,16 @@ const RestaurantsWrapper = () => {
   const dispatch = useDispatch();
   const isLoading = useSelector((state:RootState) => state.isLoading);
 
-  const getMaxDiscount = (deals: Array<DealType>) => {
-    return deals.reduce((max, deal) => {
-      if (Number(deal.discount) > max) {
-        return Number(deal.discount);
-      }
-
-      return max;
-    }, 0);
-  }
-  
   const fetchData = () => {
     axios.get('/misc/challengedata.json')
       .then(({ data }) => {
-        // Sort Deals by Discount and Restaurant by Best Deal
+        // Sort Deals by Discount and Restaurant by First (Best) Deal
         const restaurants = [...data.restaurants]
           .map((restaurant: RestaurantType) => ({
             ...restaurant,
             deals: [...restaurant.deals].sort((a, b) => Number(b.discount) - Number(a.discount)),
           }))
-          .sort((a, b) => getMaxDiscount(b.deals) - getMaxDiscount(a.deals));
+          .sort((a, b) => Number(b.deals[0].discount) - Number(a.deals[0].discount));
 
         dispatch(setRestaurants({ restaurants }));
       })
