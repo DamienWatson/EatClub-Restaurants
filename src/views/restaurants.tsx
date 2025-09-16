@@ -44,7 +44,9 @@ const Restaurants = () => {
         <h1 className={classes.srOnly}>EatClub Restaurants</h1>
 
         {(!isLoading && restaurants.length === 0) && (
-          <p>No Restaurants found</p>
+          <Layout>
+            <p>No Restaurants found</p>
+          </Layout>
         )}
 
         {(!isLoading && restaurants.length > 0) && (

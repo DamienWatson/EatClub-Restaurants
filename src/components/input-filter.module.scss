@@ -15,9 +15,14 @@
     width: calc(100% - 72px);
     font-size: 1rem;
     border: 0;
+    outline: none;
     
     &::placeholder {
       color: colour.$notes;
+    }
+
+    &:focus {
+      background-color: #f7f7f7;
     }
   }
 }
@@ -38,5 +43,6 @@
 
   .container input {
     padding-left: spacing.$m;
+    width: calc(100% - 48px);
   }
 }

@@ -1,10 +1,10 @@
 import React from 'react';
 import { RestaurantType } from '../types/restaurants';
-import Icon from './icon';
 import { kebabCase } from '../scripts/helpers';
 import { Link } from 'react-router-dom';
 import HeartIcon from './icons/heart-icon';
 import { availableMessage, getTags } from '../scripts/deals';
+import IconButton from './icon-button';
 import classes from './restaurant-card.module.scss';
 
 type RestaurantCardProps = {
@@ -36,9 +36,9 @@ const RestaurantCard = ({ restaurant }:RestaurantCardProps) => {
         <Link to={`/${kebabCase(restaurant.name)}`}>
           <h2>{restaurant.name}</h2>
         </Link>
-        <Icon>
+        <IconButton rounded>
           <HeartIcon />
-        </Icon>
+        </IconButton>
       </div>
 
       <p>0.5km Away, {restaurant.suburb}</p>

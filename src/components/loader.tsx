@@ -36,7 +36,7 @@ const Loader = ({
   if (isLoading) {
     return (
       <Layout>
-        <p className={classes.message}>Loading...</p>;
+        <p className={classes.message}>Loading...</p>
       </Layout>
     );
   }

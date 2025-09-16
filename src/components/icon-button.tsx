@@ -5,15 +5,21 @@ type IconButtonProps = {
   children: ReactNode,
   label?: string,
   width?: string,
+  rounded?: boolean,
 }
 
 const IconButton = ({
   children,
   label,
   width,
+  rounded,
 }: IconButtonProps) => {
   return (
-    <button className={`${classes.button} ${width ? classes[`width-${width}`] : ''}`}>
+    <button className={`
+      ${classes.button}
+      ${width ? classes[`width-${width}`] : ''}
+      ${rounded ? classes.rounded : '' }
+    `}>
       {children}
       {label}
     </button>

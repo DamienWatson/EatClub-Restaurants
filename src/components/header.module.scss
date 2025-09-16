@@ -12,5 +12,18 @@
     a, svg {
       display: block;
     }
+
+    a {
+      color: colour.$secondary;
+      border-radius: 100px;
+
+      &:focus,
+      &:hover {
+        cursor: pointer;
+        color: colour.$heading;
+        box-shadow: 0 0 2px 3px white, 0 0 1px 5px colour.$secondary;
+        outline: none;
+      }
+    }
   }
 }

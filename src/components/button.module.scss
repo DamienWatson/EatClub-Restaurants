@@ -9,4 +9,14 @@
   border: 2px solid colour.$secondary;
   border-radius: 100px;
   background-color: colour.$background;
+  transition: 0.3s all ease;
+
+  &:focus,
+  &:hover {
+    cursor: pointer;
+    color: colour.$background;
+    background-color: colour.$secondary;
+    box-shadow: 0 0 2px 3px white, 0 0 1px 5px colour.$secondary;
+    outline: none;
+  }
 }

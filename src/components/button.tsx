@@ -6,7 +6,10 @@ type ButtonProps = {
   onClick?: () => void,
 }
 
-const Button = ({ children, onClick }: ButtonProps) => {
+const Button = ({
+  children,
+  onClick,
+}: ButtonProps) => {
   return (
     <button
       className={classes.button}

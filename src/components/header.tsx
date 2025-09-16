@@ -5,6 +5,7 @@ import UserIcon from './icons/user-icon';
 import EatClubIcon from './icons/eatclub-icon';
 import BackIcon from './icons/back-icon';
 import classes from './header.module.scss';
+import IconButton from './icon-button';
 
 const Header = () => {
   const params = useParams();
@@ -12,15 +13,19 @@ const Header = () => {
   return (
     <header className={classes.header}>
       <div className={classes.screenContent}>
-        <UserIcon size="28" />
+        <IconButton rounded>
+          <UserIcon size="28" />
+        </IconButton>
         
         <Link to="/">
           {params.id === undefined
-            ? <EatClubIcon size="28" colour="#ce4837" />
-            : <BackIcon size="28" colour="#ce4837" />}
+            ? <EatClubIcon size="28" />
+            : <BackIcon size="28" />}
         </Link>
         
-        <OptionsIcon size="28" />
+        <IconButton rounded>
+          <OptionsIcon size="28" />
+        </IconButton>
       </div>
     </header>
   );
