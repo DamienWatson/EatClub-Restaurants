@@ -11,10 +11,6 @@
   color: colour.$primary;
 }
 
-.message {
-  padding: 0 spacing.$m;
-}
-
 @media screen and (min-width: variables.$medium) {
   .screenContent {
     width: 100%;

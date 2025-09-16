@@ -1,0 +1,9 @@
+@use '../styles/colour';
+@use '../styles/spacing';
+
+.message {
+  margin: 0;
+  padding: spacing.$m;
+  border-top: 1px solid colour.$borders;
+  text-align: center;
+}

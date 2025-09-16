@@ -1,5 +1,6 @@
 @use '../styles/colour';
 @use '../styles/spacing';
+@use '../styles/global';
 @use '../styles/variables';
 
 .carousel {
@@ -8,12 +9,6 @@
   background-color: colour.$borders;
   background-size: cover;
   background-position: center;
-}
-
-.message {
-  margin: 0;
-  padding: spacing.$m;
-  border-top: 1px solid colour.$borders;
 }
 
 @media screen and (min-width: variables.$medium) {

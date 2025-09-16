@@ -1,7 +1,7 @@
 import axios from "axios";
 import { RestaurantsType, RestaurantType } from "../types/restaurants";
 
-export const dataFetch = () => new Promise<RestaurantsType>((resolve) => {
+export const fetchRestaurants = () => new Promise<RestaurantsType>((resolve) => {
   axios.get('/misc/challengedata.json')
     .then(({ data }) => {
       // Sort Deals by Discount and Restaurant by First (Best) Deal
