@@ -6,8 +6,8 @@ import Layout from '../components/layout';
 import DetailsMenu from '../components/details-menu';
 import DetailsContent from '../components/details-content';
 import { kebabCase } from '../scripts/helpers';
-import classes from './restaurant-details.module.scss';
 import LabelNew from '../components/label-new';
+import classes from './restaurant-details.module.scss';
 
 const RestaurantDetails = () => {
   const params = useParams();

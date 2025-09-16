@@ -3,11 +3,11 @@ import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { RootState } from '../store';
 import { setFirstLoad, setIsLoading, setRestaurants } from '../slices/ecrSlice';
-import Restaurants from './restaurants';
 import { dataFetch } from '../scripts/data-fetching';
-import classes from './restaurants.module.scss';
+import RestaurantDetails from './restaurant-details';
+import classes from './restaurant-details.module.scss';
 
-const RestaurantsWrapper = () => {
+const RestaurantDetailsWrapper = () => {
   const dispatch = useDispatch();
   const firstLoad = useSelector((state:RootState) => state.firstLoad);
   const isLoading = useSelector((state:RootState) => state.isLoading);
@@ -21,14 +21,17 @@ const RestaurantsWrapper = () => {
           dispatch(setFirstLoad(false));
         });
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
 
-  if (isLoading) {
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
+  if (isLoading || firstLoad) {
     return <p className={classes.message}>Loading...</p>;
   }
 
-  return <Restaurants />;  
+  return (
+    <RestaurantDetails />
+  );
 };
 
-export default RestaurantsWrapper;
+export default RestaurantDetailsWrapper;

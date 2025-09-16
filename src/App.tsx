@@ -1,7 +1,7 @@
 import React from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import RestaurantsWrapper from './views/restaurants-wrapper';
-import RestaurantDetails from './views/restaurant-details';
+import RestaurantDetailsWrapper from './views/restaurant-details-wrapper';
 
 const router = createBrowserRouter([
   {
@@ -10,7 +10,7 @@ const router = createBrowserRouter([
   },
   {
     path: '/:id',
-    element: <RestaurantDetails />,
+    element: <RestaurantDetailsWrapper />,
   },
 ]);
 
