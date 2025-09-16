@@ -20,10 +20,10 @@
 .cover {
   position: relative;
   height: 42vw;
+  background-color: colour.$borders;
   background-size: cover;
   background-position: center;
   border-radius: spacing.$xxs;
-  border: 1px solid colour.$borders;
 }
 
 .deal {

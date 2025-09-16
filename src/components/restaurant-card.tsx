@@ -4,8 +4,8 @@ import Icon from './icon';
 import { kebabCase } from '../scripts/helpers';
 import { Link } from 'react-router-dom';
 import HeartIcon from './icons/heart-icon';
-import classes from './restaurant-card.module.scss';
 import { availableMessage, getTags } from '../scripts/deals';
+import classes from './restaurant-card.module.scss';
 
 type RestaurantCardProps = {
   restaurant: RestaurantType,

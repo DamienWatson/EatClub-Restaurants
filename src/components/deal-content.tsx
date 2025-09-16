@@ -11,7 +11,7 @@ type DealContentProps = {
 }
 
 const DealContent = ({
-  deal: { close, discount, end, lightning, objectId, open, qtyLeft, start },
+  deal: { close, discount, end, lightning, open, qtyLeft, start },
   hours,
 }: DealContentProps) => {
   const available = () => {
@@ -25,7 +25,7 @@ const DealContent = ({
     <li className={classes.container}>
       <div>
         <h2 className={classes.heading}>
-          {lightning && <LightningIcon colour="#fc0" />}
+          {lightning === "true" && <LightningIcon colour="#fc0" />}
           {discount}% Off
         </h2>
         <p className={classes.available}>{available()}</p>
